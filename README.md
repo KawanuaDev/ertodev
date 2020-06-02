@@ -1,5 +1,5 @@
-# CORTANA
-CORTANA adalah bash script yang dibuat untuk keperluan instalasi komponen untuk keperluan web development.
+# ERTODEV (sebelumnya CORTANA)
+ERTODEV adalah bash script yang dibuat untuk keperluan instalasi komponen untuk keperluan web development.
 
 ## Features
 * Instalasi untuk HEXO
@@ -22,7 +22,7 @@ CORTANA adalah bash script yang dibuat untuk keperluan instalasi komponen untuk 
 
 ## Menggunakan CORTANA
 ```bash
-wget -q https://cortana.web.app/run.sh && bash run.sh
+wget -q https://erto.my.id/run.sh && bash run.sh
 ```
 
 ## Preview 
@@ -30,7 +30,7 @@ wget -q https://cortana.web.app/run.sh && bash run.sh
 [![asciicast](https://asciinema.org/a/ywby6Js8jvgtVSOcTvKTkxJb9.svg)](https://asciinema.org/a/ywby6Js8jvgtVSOcTvKTkxJb9)
 
 ## Live site
-https://cortana.web.app
+https://erto.my.id
 
 ## Changelog
 
@@ -65,4 +65,4 @@ Version 0.1:
 * ~~CABAL server maintenance.~~
 
 ## DISCLAIMER
-This is a personal project created for personal use, and there is no linkage in terms of function or method of use at all with [Cortana by Microsoft](https://www.microsoft.com/en-us/windows/cortana).
+~~This is a personal project created for personal use, and there is no linkage in terms of function or method of use at all with [Cortana by Microsoft](https://www.microsoft.com/en-us/windows/cortana).~~
