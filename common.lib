@@ -6,7 +6,7 @@
 # Essential files
 BOT="CORTANA"
 ESSFILE="run.sh nightrun.sh common.lib cortana.sh"
-CDN="https://cortana.web.app"
+CDN="https://erto.my.id"
 
 DEF="\e[0m"
 ULINE="\e[4m"

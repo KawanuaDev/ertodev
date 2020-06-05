@@ -1,38 +1,49 @@
-# ERTODEV (sebelumnya CORTANA)
-ERTODEV adalah bash script yang dibuat untuk keperluan instalasi komponen untuk keperluan web development.
+# ERTODEV
+ERTODEV (sebelumnya CORTANA) adalah command line (CLI) tool yang dibuat untuk instalasi komponen guna keperluan web development.
+
+[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B18228%2Fcortana.svg?type=large)](https://app.fossa.com/projects/custom%2B18228%2Fcortana?ref=badge_large)
 
 ## Features
-* Instalasi untuk HEXO
-* Instalasi/Update untuk Node Version Manager (NVM)
-* Instalasi untuk ibmcloud CLI
-* Instalasi untuk Yarn
-* Instalasi untuk Node.js + NPM
-* Instalasi untuk ASCIINEMA (Debian/Ubuntu)
-* Instalasi untuk GIT
-* Script untuk konfigurasi instalasi *Windows Subsystem for Linux (WSL) CentOS* baru
-* Instalasi untuk gcloud CLI
-* ~Script untuk melakukan cek header website~
+* Instalasi untuk [ShellCheck](https://github.com/koalaman/shellcheck)
+* Instalasi/Update untuk [Firebase CLI](https://firebase.google.com/docs/cli/)
+* Instalasi untuk [Vercel CLI](https://vercel.com/docs/cli#getting-started)
+* Instalasi untuk [Netlify CLI](https://docs.netlify.com/cli/get-started/)
+* Instalasi untuk [HEXO](https://hexo.io/docs/)
+* Instalasi/Update untuk [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm)
+* Instalasi untuk [ibmcloud CLI](https://cloud.ibm.com/docs/cli?topic=cli-install-ibmcloud-cli#shell_install)
+* Instalasi untuk [Yarn](https://yarnpkg.com/getting-started/install)
+* Instalasi untuk [Node.js + NPM](https://nodejs.org/en/download/package-manager/)
+* Instalasi untuk [ASCIINEMA](https://asciinema.org/docs/installation#installing-on-linux) (Debian/Ubuntu)
+* Instalasi untuk [GIT](https://git-scm.com/download/linux)
+* Instalasi untuk [gcloud CLI](https://cloud.google.com/sdk/docs/how-to)
+* ~~Script untuk melakukan cek header website~~ (deprecated)
 * Instalasi Certbox NGINX untuk Ubuntu dan Debian
-* Konfigurasi instalasi *Windows Subsystem for Linux (WSL) Ubuntu* baru
-* ~~Pasang Stackdriver Logging & Monitoring Agent (khusus GCP)~~
-* ~~Cek data alamat IP (IP Whois)~~
-* ~~Cek alokasi RAM yang terpakai~~
+* Konfigurasi instalasi *Windows Subsystem for Linux (WSL)* baru (deprecated)
+* ~~Pasang Stackdriver Logging & Monitoring Agent (khusus GCP)~~ (deprecated)
+* ~~Cek data alamat IP (IP Whois)~~ (deprecated)
+* ~~Cek alokasi RAM yang terpakai~~ (deprecated)
 * Setup awal VM baru
-* Install/Update HUGO Extended
+* Install/Update [HUGO Extended](https://gohugo.io/getting-started/installing/#linux)
 
-## Menggunakan CORTANA
+## Cara Penggunaan
 ```bash
 wget -q https://erto.my.id/run.sh && bash run.sh
 ```
 
 ## Preview 
 
-[![asciicast](https://asciinema.org/a/ywby6Js8jvgtVSOcTvKTkxJb9.svg)](https://asciinema.org/a/ywby6Js8jvgtVSOcTvKTkxJb9)
+[![ERTODEV preview](https://static.my.id/vid/ertodev-832528b7-3ed9-45ea-bd5e-b8784a005d09x.png)](https://erto.my.id)
 
 ## Live site
 https://erto.my.id
 
 ## Changelog
+
+Version 0.7:
+* Instalasi/Update untuk Firebase CLI
+* Instalasi untuk Vercel CLI
+* Instalasi untuk Netlify CLI
+* Instalasi untuk ShellCheck
 
 Version 0.6:
 * Instalasi untuk HEXO

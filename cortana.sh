@@ -1,19 +1,19 @@
 #!/bin/bash
 #
 # cortana.sh
-# ver 0.4.1
-# Modified: 29-05-2020
+# ver 0.6
+# Modified: 05-06-2020
 
 . common.lib
 
 clear
-VER="0.6.3"
+VER="0.7"
 FILE="cortana.sh"
 
 ## Start Header ##
 flogo
 echo -e "» VERSI: ${INV} ${VER} ${DEF}" && f1baris
-printf "» URL: https://cortana.web.app" && f2baris
+printf "» URL: https://erto.my.id" && f2baris
 printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 f1baris
 ## End Header ##
@@ -81,6 +81,7 @@ select yn in "Setup awal VM baru..."\
  "Install/Update HUGO Extended"\
  "Install gcloud CLI (Debian, Ubuntu)"\
  "Install ibmcloud CLI"\
+ "Install/Update Firebase CLI"\
  "Install NGINX Certbot (Debian, Ubuntu)"\
  "Install GIT"\
  "Install ASCIINEMA"\
@@ -88,6 +89,9 @@ select yn in "Setup awal VM baru..."\
  "Install Node.js + NPM"\
  "Install YARN"\
  "Install HEXO"\
+ "Install Vercel CLI"\
+ "Install Netlify CLI"\
+ "Install ShellCheck"\
  "CABALS..."\
  "CLIMYID... (in English)"\
  "Nanti dulu."; do
@@ -115,6 +119,11 @@ select yn in "Setup awal VM baru..."\
             FILE05="install_ibmcloud.sh"
             fwget "${FILE05} -O ${FILE05}"; 
             fchmodx "${FILE05}" && ./${FILE05}; 
+            frmfile;
+            break;;
+        "Install/Update Firebase CLI" )
+            frmall; 
+            curl -sL https://firebase.tools | bash; 
             frmfile;
             break;;
         "Install NGINX Certbot (Debian, Ubuntu)" )
@@ -155,6 +164,23 @@ select yn in "Setup awal VM baru..."\
         "Install HEXO" )
             f1baris;
             npm install -g hexo; 
+            frmfile;
+            break;;
+        "Install Vercel CLI" )
+            FILE11="install_vercel.sh"
+            fwget "${FILE11} -O ${FILE11}"; 
+            fchmodx "${FILE11}" && ./${FILE11}; 
+            frmfile;
+            break;;
+        "Install Netlify CLI" )
+            f1baris;
+            npm install netlify-cli -g; 
+            frmfile;
+            break;;
+        "Install ShellCheck" )
+            FILE12="install_shellcheck.sh"
+            fwget "${FILE12} -O ${FILE12}"; 
+            fchmodx "${FILE12}" && ./${FILE12}; 
             frmfile;
             break;;
         "CABALS..." )
