@@ -8,7 +8,7 @@
 
 clear
 URL="https://erto.my.id"
-VER=$(< versi.json grep "Stable" | cut -d '"' -f 4)
+VER=$(curl -s ${URL}/versi.json grep "Stable" | cut -d '"' -f 4)
 FILE="cortana.sh"
 
 ## Start Header ##

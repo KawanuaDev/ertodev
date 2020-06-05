@@ -4,7 +4,7 @@
 # Modified: 24-05-2020
 
 # Essential files
-BOT="CORTANA"
+BOT="DEVBOT"
 ESSFILE="run.sh nightrun.sh common.lib cortana.sh"
 CDN="https://erto.my.id"
 
