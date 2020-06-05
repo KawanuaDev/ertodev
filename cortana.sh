@@ -7,13 +7,14 @@
 . common.lib
 
 clear
-VER="0.7"
+URL="https://erto.my.id"
+VER=$(< versi.json grep "Stable" | cut -d '"' -f 4)
 FILE="cortana.sh"
 
 ## Start Header ##
 flogo
 echo -e "» VERSI: ${INV} ${VER} ${DEF}" && f1baris
-printf "» URL: https://erto.my.id" && f2baris
+printf "» URL: ${URL}" && f2baris
 printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 f1baris
 ## End Header ##

@@ -15,7 +15,12 @@ function shellcheck_distro() {
     if test "$CATOS" = 'debian'
     then
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Sedang memasang..."
-        sudo apt-get install -y shellcheck
+        sudo apt remove shellcheck
+        sudo apt install -y xz-utils
+        scversion="stable"
+        wget -qO- "https://github.com/koalaman/shellcheck/releases/download/${scversion?}/shellcheck-${scversion?}.linux.x86_64.tar.xz" | tar -xJv
+        cp "shellcheck-${scversion}/shellcheck" /usr/bin/
+        rm -fR shellcheck-${scversion}
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Cek versi terpasang..."
         shellcheck --version && f2baris
         echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai." && f2baris
@@ -24,7 +29,12 @@ function shellcheck_distro() {
     elif test "$CATOS" = 'ubuntu'
     then
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Sedang memasang..."
-        sudo apt-get install -y shellcheck
+        sudo apt remove shellcheck
+        sudo apt install -y xz-utils
+        scversion="stable"
+        wget -qO- "https://github.com/koalaman/shellcheck/releases/download/${scversion?}/shellcheck-${scversion?}.linux.x86_64.tar.xz" | tar -xJv
+        cp "shellcheck-${scversion}/shellcheck" /usr/bin/
+        rm -fR shellcheck-${scversion}
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Cek versi terpasang..."
         shellcheck --version && f2baris
         echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai." && f2baris
@@ -33,8 +43,11 @@ function shellcheck_distro() {
     elif test "$CATOSx" = 'centos'
     then
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Sedang memasang..."
-        sudo yum install -y epel-release
-        sudo yum install -y ShellCheck
+        yum -y install xz
+        scversion="stable"
+        wget -qO- "https://github.com/koalaman/shellcheck/releases/download/${scversion?}/shellcheck-${scversion?}.linux.x86_64.tar.xz" | tar -xJv
+        cp "shellcheck-${scversion}/shellcheck" /usr/bin/
+        rm -fR shellcheck-${scversion}
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Cek versi terpasang..."
         shellcheck --version && f2baris
         echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai." && f2baris

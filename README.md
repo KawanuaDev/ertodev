@@ -1,7 +1,7 @@
 # ERTODEV
 ERTODEV (sebelumnya CORTANA) adalah command line (CLI) tool yang dibuat untuk instalasi komponen guna keperluan web development.
 
-[![FOSSA Status](https://app.fossa.com/api/projects/custom%2B18228%2Fcortana.svg?type=large)](https://app.fossa.com/projects/custom%2B18228%2Fcortana?ref=badge_large)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FErtomedia%2Fertodev.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FErtomedia%2Fertodev?ref=badge_large)
 
 ## Features
 * Instalasi untuk [ShellCheck](https://github.com/koalaman/shellcheck)
