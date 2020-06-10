@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # install_git.sh
-# ver 0.1.1
-# Modified: 24-05-2020
+# ver 0.2.0
+# Modified: 10-06-2020
 
 . common.lib
 
@@ -15,7 +15,13 @@ function git_distro() {
     if test "$CATOS" = 'debian'
     then
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Pemasangan git. Mohon menunggu."
-        sudo apt install -y git && git --version
+        sudo apt install -y git && git --version && f1baris
+        echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Konfigurasi awal."
+        read -rp "Tulis nama untuk aktifitas commit: " GITNAME
+        read -rp "Tulis email untuk aktifitas commit: " GITEMAIL
+        git config --global user.name "${GITNAME}"
+        git config --global user.email "${GITEMAIL}"
+        git config --global color.ui auto
         echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai." && f2baris
         fselesai && f2baris
         frmall # remove all downloaded files
@@ -27,6 +33,12 @@ function git_distro() {
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Pemasangan git. Mohon menunggu."
         sudo apt update -y
         sudo apt install -y git && git --version
+        echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Konfigurasi awal."
+        read -rp "Tulis nama untuk aktifitas commit: " GITNAME
+        read -rp "Tulis email untuk aktifitas commit: " GITEMAIL
+        git config --global user.name "${GITNAME}"
+        git config --global user.email "${GITEMAIL}"
+        git config --global color.ui auto
         echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai." && f2baris
         fselesai && f2baris
         frmall # remove all downloaded files
@@ -40,6 +52,12 @@ function git_distro() {
         sudo rpm --import http://opensource.wandisco.com/RPM-GPG-KEY-WANdisco && f1baris
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Pemasangan git. Mohon menunggu."
         sudo yum install -y git && git --version
+        echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Konfigurasi awal."
+        read -rp "Tulis nama untuk aktifitas commit: " GITNAME
+        read -rp "Tulis email untuk aktifitas commit: " GITEMAIL
+        git config --global user.name "${GITNAME}"
+        git config --global user.email "${GITEMAIL}"
+        git config --global color.ui auto
         echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai." && f2baris
         fselesai && f2baris
         frmall

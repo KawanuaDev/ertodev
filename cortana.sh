@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # cortana.sh
-# ver 0.6
-# Modified: 05-06-2020
+# ver 0.6.1
+# Modified: 10-06-2020
 
 . common.lib
 
@@ -14,7 +14,7 @@ FILE="cortana.sh"
 ## Start Header ##
 flogo
 echo -e "» VERSI: ${INV} ${VER} ${DEF}" && f1baris
-printf "» URL: ${URL}" && f2baris
+echo -e "» URL: ${URL}" && f2baris
 printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 f1baris
 ## End Header ##
