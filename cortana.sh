@@ -92,6 +92,7 @@ select yn in "Setup awal VM baru..."\
  "Install HEXO"\
  "Install Vercel CLI"\
  "Install Netlify CLI"\
+ "Install Github CLI"\
  "Install ShellCheck"\
  "CABALS..."\
  "CLIMYID... (in English)"\
@@ -178,10 +179,16 @@ select yn in "Setup awal VM baru..."\
             npm install netlify-cli -g; 
             frmfile;
             break;;
-        "Install ShellCheck" )
-            FILE12="install_shellcheck.sh"
+        "Install Github CLI" )
+            FILE12="install_github.sh"
             fwget "${FILE12} -O ${FILE12}"; 
             fchmodx "${FILE12}" && ./${FILE12}; 
+            frmfile;
+            break;;
+        "Install ShellCheck" )
+            FILE13="install_shellcheck.sh"
+            fwget "${FILE13} -O ${FILE13}"; 
+            fchmodx "${FILE13}" && ./${FILE13}; 
             frmfile;
             break;;
         "CABALS..." )

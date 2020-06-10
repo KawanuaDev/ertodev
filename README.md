@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Ertomedia/ertodev.svg?branch=master)](https://travis-ci.com/Ertomedia/ertodev)
+
 # ERTODEV
 
 ERTODEV (sebelumnya CORTANA) adalah command line (CLI) tool yang dibuat untuk instalasi komponen guna keperluan web development.
