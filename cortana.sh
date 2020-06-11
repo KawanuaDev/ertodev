@@ -84,7 +84,7 @@ select yn in "Setup awal VM baru..."\
  "Install ibmcloud CLI"\
  "Install/Update Firebase CLI"\
  "Install NGINX Certbot (Debian, Ubuntu)"\
- "Install GIT"\
+ "Install/Update GIT"\
  "Install ASCIINEMA"\
  "Install/Update Node Version Manager (NVM)"\
  "Install Node.js + NPM"\
@@ -134,7 +134,7 @@ select yn in "Setup awal VM baru..."\
             fchmodx "${FCERT}" && ./${FCERT}; 
             frmfile;
             break;;
-        "Install GIT" )
+        "Install/Update GIT" )
             FGIT="install_git.sh"
             fwget "${FGIT} -O ${FGIT}"; 
             fchmodx "${FGIT}" && ./${FGIT}; 
