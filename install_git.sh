@@ -29,7 +29,7 @@ function git_distro() {
     elif test "$CATOS" = 'ubuntu'
     then
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Menambahkan repository."
-        add-apt-repository ppa:git-core/ppa && f1baris
+        sudo add-apt-repository ppa:git-core/ppa && f1baris
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Pemasangan git. Mohon menunggu."
         sudo apt update -y
         sudo apt install -y git && git --version

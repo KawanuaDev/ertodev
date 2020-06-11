@@ -1,12 +1,12 @@
 #!/bin/bash
 #
 # cortana.sh
-# ver 0.6.1
-# Modified: 10-06-2020
+# ver 0.6.2
+# Modified: 11-06-2020
 
 . common.lib
 
-clear
+prechk && clear
 URL="https://erto.my.id"
 VER=$(curl -s ${URL}/versi.json | grep "Stable" | cut -d '"' -f 4)
 FILE="cortana.sh"
@@ -24,16 +24,16 @@ function wsl_distro() {
 
     if test "$CATOS" = 'ubuntu'
     then
-        FILE05="preinstall_wsl_ubn.sh"
-        fwget "${FILE05} -O ${FILE05}"; 
-        fchmodx "${FILE05}" && ./${FILE05}; 
+        WSLU="preinstall_wsl_ubn.sh"
+        fwget "${WSLU} -O ${WSLU}"; 
+        fchmodx "${WSLU}" && ./${WSLU}; 
         frmfile;
 
     elif test "$CATOSx" = 'centos'
     then
-        FILE05="preinstall_wsl_cent.sh"
-        fwget "${FILE05} -O ${FILE05}"; 
-        fchmodx "${FILE05}" && ./${FILE05}; 
+        WSLC="preinstall_wsl_cent.sh"
+        fwget "${WSLC} -O ${WSLC}"; 
+        fchmodx "${WSLC}" && ./${WSLC}; 
         frmfile;
 
     else
@@ -48,23 +48,23 @@ function gcloud_distro() {
 
     if test "$CATOS" = 'ubuntu'
     then
-        FILE05="install_gcloud_ubn.sh"
-        fwget "${FILE05} -O ${FILE05}"; 
-        fchmodx "${FILE05}" && ./${FILE05}; 
+        GCLIU="install_gcloud_ubn.sh"
+        fwget "${GCLIU} -O ${GCLIU}"; 
+        fchmodx "${GCLIU}" && ./${GCLIU}; 
         frmfile;
 
     elif test "$CATOS" = 'debian'
     then
-        FILE05="install_gcloud_ubn.sh"
-        fwget "${FILE05} -O ${FILE05}"; 
-        fchmodx "${FILE05}" && ./${FILE05}; 
+        GCLID="install_gcloud_ubn.sh"
+        fwget "${GCLID} -O ${GCLID}"; 
+        fchmodx "${GCLID}" && ./${GCLID}; 
         frmfile;
 
     elif test "$CATOSx" = 'centos'
     then
-        FILE05="install_gcloud_cent.sh"
-        fwget "${FILE05} -O ${FILE05}"; 
-        fchmodx "${FILE05}" && ./${FILE05}; 
+        GCLIC="install_gcloud_cent.sh"
+        fwget "${GCLIC} -O ${GCLIC}"; 
+        fchmodx "${GCLIC}" && ./${GCLIC}; 
         frmfile;
 
     else
@@ -100,27 +100,27 @@ select yn in "Setup awal VM baru..."\
     
     case $yn in
         "Setup awal VM baru..." )
-            FILE02="preinstall_vm.sh"
-            fwget "${FILE02} -O ${FILE02}"; 
-            fchmodx "${FILE02}" && ./${FILE02}; 
+            FVM="preinstall_vm.sh"
+            fwget "${FVM} -O ${FVM}"; 
+            fchmodx "${FVM}" && ./${FVM}; 
             frmfile;
             break;;
         "Konfigurasi WSL baru..." )
             wsl_distro;
             break;;
         "Install/Update HUGO Extended" )
-            FILE03="install_hugoext.sh"
-            fwget "${FILE03} -O ${FILE03}"; 
-            fchmodx "${FILE03}" && ./${FILE03}; 
+            FHUGO="install_hugoext.sh"
+            fwget "${FHUGO} -O ${FHUGO}"; 
+            fchmodx "${FHUGO}" && ./${FHUGO}; 
             frmfile;
             break;;
         "Install gcloud CLI (Debian, Ubuntu)" )
             gcloud_distro;
             break;;
         "Install ibmcloud CLI" )
-            FILE05="install_ibmcloud.sh"
-            fwget "${FILE05} -O ${FILE05}"; 
-            fchmodx "${FILE05}" && ./${FILE05}; 
+            FIBM="install_ibmcloud.sh"
+            fwget "${FIBM} -O ${FIBM}"; 
+            fchmodx "${FIBM}" && ./${FIBM}; 
             frmfile;
             break;;
         "Install/Update Firebase CLI" )
@@ -129,21 +129,21 @@ select yn in "Setup awal VM baru..."\
             frmfile;
             break;;
         "Install NGINX Certbot (Debian, Ubuntu)" )
-            FILE06="install_certbot_nginx.sh"
-            fwget "${FILE06} -O ${FILE06}"; 
-            fchmodx "${FILE06}" && ./${FILE06}; 
+            FCERT="install_certbot_nginx.sh"
+            fwget "${FCERT} -O ${FCERT}"; 
+            fchmodx "${FCERT}" && ./${FCERT}; 
             frmfile;
             break;;
         "Install GIT" )
-            FILE07="install_git.sh"
-            fwget "${FILE07} -O ${FILE07}"; 
-            fchmodx "${FILE07}" && ./${FILE07}; 
+            FGIT="install_git.sh"
+            fwget "${FGIT} -O ${FGIT}"; 
+            fchmodx "${FGIT}" && ./${FGIT}; 
             frmfile;
             break;;
         "Install ASCIINEMA" )
-            FILE08="install_asciinema.sh"
-            fwget "${FILE08} -O ${FILE08}"; 
-            fchmodx "${FILE08}" && ./${FILE08}; 
+            FASCII="install_asciinema.sh"
+            fwget "${FASCII} -O ${FASCII}"; 
+            fchmodx "${FASCII}" && ./${FASCII}; 
             frmfile;
             break;;
         "Install/Update Node Version Manager (NVM)" )
@@ -152,15 +152,15 @@ select yn in "Setup awal VM baru..."\
             frmfile;
             break;;
         "Install Node.js + NPM" )
-            FILE09="install_nodejs.sh"
-            fwget "${FILE09} -O ${FILE09}"; 
-            fchmodx "${FILE09}" && ./${FILE09}; 
+            FNODE="install_nodejs.sh"
+            fwget "${FNODE} -O ${FNODE}"; 
+            fchmodx "${FNODE}" && ./${FNODE}; 
             frmfile;
             break;;
         "Install YARN" )
-            FILE10="install_yarn.sh"
-            fwget "${FILE10} -O ${FILE10}"; 
-            fchmodx "${FILE10}" && ./${FILE10}; 
+            FYARN="install_yarn.sh"
+            fwget "${FYARN} -O ${FYARN}"; 
+            fchmodx "${FYARN}" && ./${FYARN}; 
             frmfile;
             break;;
         "Install HEXO" )
@@ -169,9 +169,9 @@ select yn in "Setup awal VM baru..."\
             frmfile;
             break;;
         "Install Vercel CLI" )
-            FILE11="install_vercel.sh"
-            fwget "${FILE11} -O ${FILE11}"; 
-            fchmodx "${FILE11}" && ./${FILE11}; 
+            FVERCL="install_vercel.sh"
+            fwget "${FVERCL} -O ${FVERCL}"; 
+            fchmodx "${FVERCL}" && ./${FVERCL}; 
             frmfile;
             break;;
         "Install Netlify CLI" )
@@ -180,15 +180,15 @@ select yn in "Setup awal VM baru..."\
             frmfile;
             break;;
         "Install Github CLI" )
-            FILE12="install_github.sh"
-            fwget "${FILE12} -O ${FILE12}"; 
-            fchmodx "${FILE12}" && ./${FILE12}; 
+            FGITHB="install_github.sh"
+            fwget "${FGITHB} -O ${FGITHB}"; 
+            fchmodx "${FGITHB}" && ./${FGITHB}; 
             frmfile;
             break;;
         "Install ShellCheck" )
-            FILE13="install_shellcheck.sh"
-            fwget "${FILE13} -O ${FILE13}"; 
-            fchmodx "${FILE13}" && ./${FILE13}; 
+            FSHLCHK="install_shellcheck.sh"
+            fwget "${FSHLCHK} -O ${FSHLCHK}"; 
+            fchmodx "${FSHLCHK}" && ./${FSHLCHK}; 
             frmfile;
             break;;
         "CABALS..." )

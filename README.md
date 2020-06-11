@@ -8,6 +8,7 @@ ERTODEV (sebelumnya CORTANA) adalah command line (CLI) tool yang dibuat untuk in
 
 ## Features
 
+* Instalasi untuk [Github CLI](https://cli.github.com/manual/)
 * Instalasi untuk [ShellCheck](https://github.com/koalaman/shellcheck)
 * Instalasi/Update untuk [Firebase CLI](https://firebase.google.com/docs/cli/)
 * Instalasi untuk [Vercel CLI](https://vercel.com/docs/cli#getting-started)

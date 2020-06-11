@@ -73,3 +73,21 @@ function catdistro() {
     CATOS=$(sudo cat /etc/os-release | grep -w ID | cut -d '=' -f 2)
     CATOSx=$(sudo cat /etc/os-release | grep -w ID | cut -d '"' -f 2)
 }
+
+function prechk() {
+    catdistro
+
+    if test "$CATOS" = 'ubuntu'
+    then
+        sudo apt install -y curl software-properties-common
+
+    elif test "$CATOS" = 'debian'
+    then
+        sudo apt install -y curl
+
+    elif test "$CATOSx" = 'centos'
+    then
+        sudo yum install -y curl
+
+    fi
+}
