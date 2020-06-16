@@ -70,24 +70,38 @@ function frmall() {
 
 # deteksi nama distro
 function catdistro() {
-    CATOS=$(sudo cat /etc/os-release | grep -w ID | cut -d '=' -f 2)
-    CATOSx=$(sudo cat /etc/os-release | grep -w ID | cut -d '"' -f 2)
+    CATOS=$(grep -w ID /etc/os-release | cut -d '=' -f 2)
+    CATOSx=$(grep -w ID /etc/os-release | cut -d '"' -f 2)
 }
 
 function prechk() {
-    catdistro
+    osdebn=$(grep -w ID /etc/os-release | cut -d '=' -f 2)
+    osrhel=$(grep -w ID /etc/os-release | cut -d '"' -f 2)
 
-    if test "$CATOS" = 'ubuntu'
+    if [[ "$osdebn" = 'ubuntu' ]]
     then
-        sudo apt install -y curl software-properties-common
+        ## Check curl if exist
+        if [ ! -f /usr/bin/curl ]; then
+            echo "${TITLE} CURL not found. Installing..."
+            sudo apt install -y -q curl
+        fi
+        sudo apt install -y software-properties-common
 
-    elif test "$CATOS" = 'debian'
+    elif [[ "$osdebn" = 'debian' ]]
     then
-        sudo apt install -y curl
+        ## Check curl if exist
+        if [ ! -f /usr/bin/curl ]; then
+            echo "${TITLE} CURL not found. Installing..."
+            sudo apt install -y -q curl
+        fi
 
-    elif test "$CATOSx" = 'centos'
+    elif [[ "$osrhel" = 'centos' ]]
     then
-        sudo yum install -y curl
+        ## Check curl if exist
+        if [ ! -f /usr/bin/curl ]; then
+            echo "${TITLE} CURL not found. Installing..."
+            sudo yum install -y -q curl
+        fi
 
     fi
 }

@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # cortana.sh
-# ver 0.6.2
-# Modified: 11-06-2020
+# ver 0.6.3
+# Modified: 16-06-2020
 
 . common.lib
 
@@ -148,7 +148,8 @@ select yn in "Setup awal VM baru..."\
             break;;
         "Install/Update Node Version Manager (NVM)" )
             frmall; 
-            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash; 
+            NVER="v0.35.3"
+            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/${NVER}/install.sh | bash; 
             frmfile;
             break;;
         "Install Node.js + NPM" )
