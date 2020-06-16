@@ -1,7 +1,7 @@
 # common.lib
 #
-# ver 0.2.0
-# Modified: 24-05-2020
+# ver 0.2.1
+# Modified: 16-10-2020
 
 # Essential files
 BOT="DEVBOT"
@@ -104,4 +104,10 @@ function prechk() {
         fi
 
     fi
+}
+
+# delay replcaing sleep
+function delay()
+{
+        read -n1 -s -t$1
 }

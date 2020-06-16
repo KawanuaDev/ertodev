@@ -1,7 +1,8 @@
 #!/bin/bash
 #
 # run.sh
-# ver 0.1.0
+# ver 0.1.1
+# Modified: 16-10-2020
 
 FILE="run.sh"
 CDEF="\e[39m"
@@ -16,35 +17,19 @@ fdistrochk() {
 
     if [[ "$osdebn" = 'ubuntu' ]]
     then
-        ## Check curl if exist
-        if [ ! -f /usr/bin/curl ]; then
-            echo "${TITLE} CURL not found. Installing..."
-            sudo apt install -y -q curl
-        fi
+        PKG="apt"
 
     elif [[ "$osdebn" = 'debian' ]]
     then
-        ## Check curl if exist
-        if [ ! -f /usr/bin/curl ]; then
-            echo "${TITLE} CURL not found. Installing..."
-            sudo apt install -y -q curl
-        fi
+        PKG="apt"
 
     elif [[ "$osrhel" = 'centos' ]]
     then
-        ## Check curl if exist
-        if [ ! -f /usr/bin/curl ]; then
-            echo "${TITLE} CURL not found. Installing..."
-            yum -y -q install curl
-        fi
+        PKG="yum"
 
     elif [[ "$osrhel" = 'fedora' ]]
     then
-        ## Check curl if exist
-        if [ ! -f /usr/bin/curl ]; then
-            echo "${TITLE} CURL not found. Installing..."
-            yum -y -q install curl
-        fi
+        PKG="yum"
 
     else
         printf "\n"
@@ -54,6 +39,12 @@ fdistrochk() {
     fi
 }
 fdistrochk
+
+## Check dependecies if exist
+if [ ! -f /usr/bin/curl ]; then
+    echo "${TITLE} CURL not found. Installing..."
+    ${PKG} -y -q install curl
+fi
 
 ## Fetching required files to run
 sudo wget -q https://cortana.web.app/common.lib
