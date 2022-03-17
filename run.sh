@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # run.sh
-# ver 0.1.2
-# Modified: 17-03-2022
+# ver 0.1.3
+# Modified: 18-03-2022
 
 FILE="run.sh"
 CDEF="\e[39m"
@@ -47,7 +47,7 @@ if [ ! -f /usr/bin/curl ]; then
 fi
 
 ## Fetching required files to run
-sudo wget -q https://cortana.web.app/common.lib
-sudo wget -q https://cortana.web.app/ertodev.sh
+sudo wget -q https://ertodev.web.app/common.lib
+sudo wget -q https://ertodev.web.app/ertodev.sh
 sudo chmod +x ertodev.sh
 ./ertodev.sh

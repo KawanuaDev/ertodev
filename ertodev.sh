@@ -1,13 +1,13 @@
 #!/bin/bash
 #
 # ertodev.sh
-# ver 0.1
-# Modified: 17-03-2022
+# ver 0.1.1
+# Modified: 18-03-2022
 
 . common.lib
 
 prechk && clear
-URL="https://erto.my.id"
+URL="https://ertodev.web.app"
 VER=$(curl -s ${URL}/versi.json | grep "Stable" | cut -d '"' -f 4)
 FILE="ertodev.sh"
 
