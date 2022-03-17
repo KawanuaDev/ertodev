@@ -1,11 +1,11 @@
 # common.lib
 #
-# ver 0.2.1
-# Modified: 16-10-2020
+# ver 0.2.2
+# Modified: 17-03-2022
 
 # Essential files
 BOT="DEVBOT"
-ESSFILE="run.sh nightrun.sh common.lib cortana.sh"
+ESSFILE="run.sh nightrun.sh common.lib cortana.sh ertodev.sh"
 CDN="https://erto.my.id"
 
 DEF="\e[0m"
@@ -28,14 +28,14 @@ function f2baris() {
     printf "\n\n"
 }
 
-# wget file dari url
+# logo
 function flogo() {
     echo -e "\n${LCYAN}"
-    printf " ▄▄·       ▄▄▄  ▄▄▄▄▄▄ ▄▄▄·  ▐ ▄  ▄▄▄· " && f1baris
-    printf "▐█ ▌▪ ▄█▀▄ ▀▄ █·▀•██ ▀▐█ ▀█ •█▌▐█▐█ ▀█ " && f1baris
-    printf "██ ▄▄▐█▌.▐▌▐▀▀▄   ▐█.▪▄█▀▀█ ▐█▐▐▌▄█▀▀█ " && f1baris
-    printf "▐███▌▐█▌.▐▌▐█•█▌  ▐█▌·▐█▪ ▐▌██▐█▌▐█▪ ▐▌" && f1baris
-    printf "·▀▀▀  ▀█▄▀▪.▀  ▀  ▀▀▀  ▀  ▀ ▀▀ █▪ ▀  ▀ " && echo -e "${CDEF}\n\n"
+    printf "▄▄▄ .▄▄▄  ▄▄▄▄▄      ·▄▄▄▄  ▄▄▄ . ▌ ▐·" && f1baris
+    printf "▀▄.▀·▀▄ █·•██  ▪▄█▀▄ ██▪ ██ ▀▄.▀·▪█·█▌" && f1baris
+    printf "▐▀▀▪▄▐▀▀▄  ▐█.▪▐█▌.▐▌▐█· ▐█▌▐▀▀▪▄▐█▐█•" && f1baris
+    printf "▐█▄▄▌▐█•█▌ ▐█▌·▐█▌.▐▌██. ██ ▐█▄▄▌ ███ " && f1baris
+    printf " ▀▀▀ .▀  ▀ ▀▀▀  ▀█▄▀▪▀▀▀▀▀•  ▀▀▀ . ▀  " && echo -e "${CDEF}\n\n"
 }
 
 # wget file dari url
