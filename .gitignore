@@ -1,1 +1,5 @@
+.firebase/
+firebase.json
+.firebaserc
+deploy.sh
 push.sh

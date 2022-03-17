@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # run.sh
-# ver 0.1.1
-# Modified: 16-10-2020
+# ver 0.1.2
+# Modified: 17-03-2022
 
 FILE="run.sh"
 CDEF="\e[39m"
@@ -48,6 +48,6 @@ fi
 
 ## Fetching required files to run
 sudo wget -q https://cortana.web.app/common.lib
-sudo wget -q https://cortana.web.app/cortana.sh
-sudo chmod +x cortana.sh
-./cortana.sh
+sudo wget -q https://cortana.web.app/ertodev.sh
+sudo chmod +x ertodev.sh
+./ertodev.sh

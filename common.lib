@@ -5,7 +5,7 @@
 
 # Essential files
 BOT="DEVBOT"
-ESSFILE="run.sh nightrun.sh common.lib cortana.sh"
+ESSFILE="run.sh nightrun.sh common.lib cortana.sh ertodev.sh"
 CDN="https://erto.my.id"
 
 DEF="\e[0m"
