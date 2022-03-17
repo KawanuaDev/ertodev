@@ -1,12 +1,12 @@
 # common.lib
 #
-# ver 0.2.2
-# Modified: 17-03-2022
+# ver 0.2.3
+# Modified: 18-03-2022
 
 # Essential files
-BOT="DEVBOT"
+BOT="FAKEAI"
 ESSFILE="run.sh nightrun.sh common.lib cortana.sh ertodev.sh"
-CDN="https://erto.my.id"
+CDN="https://ertodev.web.app"
 
 DEF="\e[0m"
 ULINE="\e[4m"
@@ -40,7 +40,7 @@ function flogo() {
 
 # wget file dari url
 function fwget() {
-    sudo wget -q https://erto.my.id/$1
+    sudo wget -q https://ertodev.web.app/$1
 }
 
 # bye dari Cortana waktu exit
