@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # install_hugoext.sh
-# ver 0.1.3
-# Modified: 24-05-2020
+# ver 0.1.4
+# Modified: 17-03-2022
 
 . common.lib
 
@@ -25,7 +25,7 @@ function hugo_distro() {
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Mengekstrak file."
         sudo dpkg -i hugo*_Linux-64bit.deb && f1baris
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Verifikasi versi terpasang."
-        hugo version && f1baris
+        hugo version && rm -fR *.deb && f1baris
         echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai."
         frmall # remove all downloaded files
 
@@ -36,7 +36,7 @@ function hugo_distro() {
         sudo yum update -y
         sudo yum install hugo -y && f1baris
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Verifikasi versi terpasang."
-        hugo version && f1baris
+        hugo version && rm -fR *.deb && f1baris
         echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai." && f2baris
         fselesai && f2baris
         frmall # remove all downloaded files

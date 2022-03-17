@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # cortana.sh
-# ver 0.6.3
-# Modified: 16-06-2020
+# ver 0.7
+# Modified: 17-03-2022
 
 . common.lib
 
@@ -93,6 +93,8 @@ select yn in "Setup awal VM baru..."\
  "Install Vercel CLI"\
  "Install Netlify CLI"\
  "Install Github CLI"\
+ "Install Heroku CLI"\
+ "Install Cloudflare CLI"\
  "Install ShellCheck"\
  "CABALS..."\
  "CLIMYID... (in English)"\
@@ -124,8 +126,9 @@ select yn in "Setup awal VM baru..."\
             frmfile;
             break;;
         "Install/Update Firebase CLI" )
-            frmall; 
-            curl -sL https://firebase.tools | bash; 
+            FBASE="install_firebase.sh"
+            fwget "${FBASE} -O ${FBASE}"; 
+            fchmodx "${FBASE}" && ./${FBASE}; 
             frmfile;
             break;;
         "Install NGINX Certbot (Debian, Ubuntu)" )
@@ -148,7 +151,7 @@ select yn in "Setup awal VM baru..."\
             break;;
         "Install/Update Node Version Manager (NVM)" )
             frmall; 
-            NVER="v0.35.3"
+            NVER="v0.39.1"
             wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/${NVER}/install.sh | bash; 
             frmfile;
             break;;
@@ -184,6 +187,18 @@ select yn in "Setup awal VM baru..."\
             FGITHB="install_github.sh"
             fwget "${FGITHB} -O ${FGITHB}"; 
             fchmodx "${FGITHB}" && ./${FGITHB}; 
+            frmfile;
+            break;;
+        "Install Heroku CLI" )
+            FHERO="install_heroku.sh"
+            fwget "${FHERO} -O ${FHERO}"; 
+            fchmodx "${FHERO}" && ./${FHERO}; 
+            frmfile;
+            break;;
+        "Install Cloudflare CLI" )
+            FWRANG="install_wrangler.sh"
+            fwget "${FWRANG} -O ${FWRANG}"; 
+            fchmodx "${FWRANG}" && ./${FWRANG}; 
             frmfile;
             break;;
         "Install ShellCheck" )

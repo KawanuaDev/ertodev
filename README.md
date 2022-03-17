@@ -8,6 +8,8 @@ ERTODEV (sebelumnya CORTANA) adalah command line (CLI) tool yang dibuat untuk in
 
 ## Features
 
+* Instalasi untuk [Cloudflare CLI](https://developers.cloudflare.com/workers/cli-wrangler/)
+* Instalasi untuk [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 * Instalasi untuk [Github CLI](https://cli.github.com/manual/)
 * Instalasi untuk [ShellCheck](https://github.com/koalaman/shellcheck)
 * Instalasi/Update untuk [Firebase CLI](https://firebase.google.com/docs/cli/)
