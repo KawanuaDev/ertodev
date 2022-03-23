@@ -1,20 +1,19 @@
 #!/bin/bash
 #
-# ertodev.sh
-# ver 0.1.1
-# Modified: 18-03-2022
+# webdevis.sh
+# ver 0.2.1
+# Modified: 23-03-2022
 
 . common.lib
 
 prechk && clear
-URL="https://ertodev.web.app"
-VER=$(curl -s ${URL}/versi.json | grep "Stable" | cut -d '"' -f 4)
-FILE="ertodev.sh"
+VER=$(curl -s ${CDN}/versi.json | grep "Stable" | cut -d '"' -f 4)
+FILE="webdevis.sh"
 
 ## Start Header ##
 flogo
 echo -e "» VERSI: ${INV} ${VER} ${DEF}" && f1baris
-echo -e "» URL: ${URL}" && f2baris
+echo -e "» URL: ${CDN}" && f2baris
 printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
 f1baris
 ## End Header ##
@@ -76,7 +75,7 @@ function gcloud_distro() {
 }
 
 echo -e "${CDEF}"
-echo -e "${LCYAN}[${BOT}]:${CDEF} Halo, ada yang bisa dibantu?"
+echo -e "${LCYAN}[${BOT}]:${CDEF} Halo $USER, ada yang bisa dibantu?"
 select yn in "Setup awal VM baru..."\
  "Konfigurasi WSL baru..."\
  "Install/Update HUGO Extended"\
@@ -89,14 +88,14 @@ select yn in "Setup awal VM baru..."\
  "Install/Update Node Version Manager (NVM)"\
  "Install Node.js + NPM"\
  "Install YARN"\
+ "Install Deno.js"\
  "Install HEXO"\
  "Install Vercel CLI"\
  "Install Netlify CLI"\
  "Install Github CLI"\
  "Install Heroku CLI"\
- "Install Cloudflare CLI"\
+ "Install Cloudflare Wrangler"\
  "Install ShellCheck"\
- "CABALS..."\
  "CLIMYID... (in English)"\
  "Nanti dulu."; do
     
@@ -120,11 +119,16 @@ select yn in "Setup awal VM baru..."\
             gcloud_distro;
             break;;
         "Install ibmcloud CLI" )
-            FIBM="install_ibmcloud.sh"
-            fwget "${FIBM} -O ${FIBM}"; 
-            fchmodx "${FIBM}" && ./${FIBM}; 
-            frmfile;
+            f1baris;
+            curl -fsSL https://clis.cloud.ibm.com/install/linux | sh;
+            frmall; 
             break;;
+        # "Install ibmcloud CLI" )
+        #     FIBM="install_ibmcloud.sh"
+        #     fwget "${FIBM} -O ${FIBM}"; 
+        #     fchmodx "${FIBM}" && ./${FIBM}; 
+        #     frmfile;
+        #     break;;
         "Install/Update Firebase CLI" )
             FBASE="install_firebase.sh"
             fwget "${FBASE} -O ${FBASE}"; 
@@ -150,11 +154,16 @@ select yn in "Setup awal VM baru..."\
             frmfile;
             break;;
         "Install/Update Node Version Manager (NVM)" )
-            frmall; 
-            NVER="v0.39.1"
-            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/${NVER}/install.sh | bash; 
+            FNVM="install_nvm.sh"
+            fwget "${FNVM} -O ${FNVM}"; 
+            fchmodx "${FNVM}" && ./${FNVM}; 
             frmfile;
             break;;
+        # "Install/Update Node Version Manager (NVM)" )
+        #     NVER="v0.39.1"
+        #     wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/${NVER}/install.sh | bash; 
+        #     frmall; 
+        #     break;;
         "Install Node.js + NPM" )
             FNODE="install_nodejs.sh"
             fwget "${FNODE} -O ${FNODE}"; 
@@ -167,10 +176,15 @@ select yn in "Setup awal VM baru..."\
             fchmodx "${FYARN}" && ./${FYARN}; 
             frmfile;
             break;;
+        "Install Deno.js" )
+            f1baris;
+            curl -fsSL https://deno.land/x/install/install.sh | sh; 
+            frmall; 
+            break;;
         "Install HEXO" )
             f1baris;
             npm install -g hexo; 
-            frmfile;
+            frmall; 
             break;;
         "Install Vercel CLI" )
             FVERCL="install_vercel.sh"
@@ -181,7 +195,7 @@ select yn in "Setup awal VM baru..."\
         "Install Netlify CLI" )
             f1baris;
             npm install netlify-cli -g; 
-            frmfile;
+            frmall; 
             break;;
         "Install Github CLI" )
             FGITHB="install_github.sh"
@@ -195,7 +209,7 @@ select yn in "Setup awal VM baru..."\
             fchmodx "${FHERO}" && ./${FHERO}; 
             frmfile;
             break;;
-        "Install Cloudflare CLI" )
+        "Install Cloudflare Wrangler" )
             FWRANG="install_wrangler.sh"
             fwget "${FWRANG} -O ${FWRANG}"; 
             fchmodx "${FWRANG}" && ./${FWRANG}; 
@@ -207,11 +221,6 @@ select yn in "Setup awal VM baru..."\
             fchmodx "${FSHLCHK}" && ./${FSHLCHK}; 
             frmfile;
             break;;
-        "CABALS..." )
-            frmall;
-            wget https://cabals.web.app/run.sh && bash run.sh;
-            frmfile;  # remove THIS file
-            exit;;
         "CLIMYID... (in English)" )
             frmall;
             wget https://cli.my.id/run.sh && bash run.sh;
