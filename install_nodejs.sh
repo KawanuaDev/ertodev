@@ -56,8 +56,18 @@ function node_distro() {
     fi
 }
 
+function nodecheck() {
+    ## Check Node.js if exist
+    if [ -f /usr/bin/node ]; then
+        echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Node.js sudah terpasang. Berikut adalah versi yang ada."
+        node --version && f2baris;
+        frmall; # remove all downloaded files
+        exit;;
+    fi
+}
+
 function nvmcheck() {
-    ## Check dependecies if exist
+    ## Check NVM if exist
     if [ ! -f /usr/bin/nvm ]; then
         echo -e "${LRED}i  ${TOPIK}:${CDEF} NVM belum terpasang. Instalasi NVM versi terbaru dimulai..."
         wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/"${NVMLATEST}"/install.sh | bash;
@@ -68,6 +78,7 @@ function nvmcheck() {
 }
 
 f1baris
+nodecheck
 echo -e "${LCYAN}[${BOT}]:${CDEF} Pilihan instalasi Node"
 select yn in "NVM" "Repository" "Exit"; do
     case $yn in

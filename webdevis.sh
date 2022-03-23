@@ -7,7 +7,7 @@
 . common.lib
 
 prechk && clear
-VER=$(curl -s ${CDN}/versi.json | grep "Stable" | cut -d '"' -f 4)
+VER=$(curl -s https://raw.githubusercontent.com/KawanuaDev/ertodev/master/versi.json | grep "Stable" | cut -d '"' -f 4)
 FILE="webdevis.sh"
 
 ## Start Header ##
