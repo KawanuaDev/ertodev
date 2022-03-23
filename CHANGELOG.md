@@ -1,6 +1,16 @@
+**Version 0.9**
+
+* [NEW] Instalasi untuk Deno CLI
+* [NEW] Update Logo
+* [NEW] NVM: Pilihan untuk pemasangan versi kustom.
+* [NEW] Node.js: Pilihan untuk instalasi via NVM atau via repository.
+* [FIX] ibmcloud: Menyederhanakan proses instalasi.
+* [FIX] Wrangler: Memperbaiki nama dari `Cloudflare CLI ===> Cloudflare Wrangler`, sebab keduanya adalah tools yang berbeda.
+* [FIX] Wrangler: Instalasi via Tarball dihapus.
+
 **Version 0.8**
 
-* [NEW] Instalasi untuk Cloudflare CLI (Wrangler) 
+* [NEW] Instalasi untuk Cloudflare Wrangler 
 * [NEW] Instalasi untuk Heroku CLI
 * [NEW] Update Logo
 * [FIX] HUGO: Otomatis hapus file `*.deb` setelah selesai install.

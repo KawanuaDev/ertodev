@@ -1,21 +1,24 @@
 # common.lib
 #
-# ver 0.2.3
-# Modified: 18-03-2022
+# ver 0.2.5
+# Modified: 23-03-2022
 
 # Essential files
 BOT="FAKEAI"
-ESSFILE="run.sh nightrun.sh common.lib cortana.sh ertodev.sh"
-CDN="https://ertodev.web.app"
+ESSFILE="run.sh nightrun.sh common.lib cortana.sh ertodev.sh webdevis.sh"
+CDN="https://webdevis.web.app"
+
+NVMLATEST="v0.39.1"
 
 DEF="\e[0m"
-ULINE="\e[4m"
-CDEF="\e[39m"
-LCYAN="\e[96m"
-LGREN="\e[92m"
-LRED="\e[91m"
-INV="\e[7m"
 BOLD="\e[1m"
+ULINE="\e[4m"
+INV="\e[7m"
+CDEF="\e[39m"
+LRED="\e[91m"
+LGREN="\e[92m"
+LYELL="\e[93m"
+LCYAN="\e[96m"
 
 
 # isi 1 baris kosong
@@ -31,16 +34,17 @@ function f2baris() {
 # logo
 function flogo() {
     echo -e "\n${LCYAN}"
-    printf "▄▄▄ .▄▄▄  ▄▄▄▄▄      ·▄▄▄▄  ▄▄▄ . ▌ ▐·" && f1baris
-    printf "▀▄.▀·▀▄ █·•██  ▪▄█▀▄ ██▪ ██ ▀▄.▀·▪█·█▌" && f1baris
-    printf "▐▀▀▪▄▐▀▀▄  ▐█.▪▐█▌.▐▌▐█· ▐█▌▐▀▀▪▄▐█▐█•" && f1baris
-    printf "▐█▄▄▌▐█•█▌ ▐█▌·▐█▌.▐▌██. ██ ▐█▄▄▌ ███ " && f1baris
-    printf " ▀▀▀ .▀  ▀ ▀▀▀  ▀█▄▀▪▀▀▀▀▀•  ▀▀▀ . ▀  " && echo -e "${CDEF}\n\n"
+    printf "▄▄▌ ▐ ▄▌▄▄▄ .▄▄▄▄· ·▄▄▄▄  ▄▄▄ . ▌ ▐·▪  .▄▄ · " && f1baris
+    printf "██· █▌▐█▀▄.▀·▐█ ▀█▪██▪ ██ ▀▄.▀·▪█·█▌██ ▐█ ▀. " && f1baris
+    printf "██▪▐█▐▐▌▐▀▀▪▄▐█▀▀█▄▐█· ▐█▌▐▀▀▪▄▐█▐█•▐█·▄▀▀▀█▄" && f1baris
+    printf "▐█▌██▐█▌▐█▄▄▌██▄▪▐███. ██ ▐█▄▄▌ ███ ▐█▌▐█▄▪▐█" && f1baris
+    printf " ▀▀▀▀ ▀▪ ▀▀▀ ·▀▀▀▀ ▀▀▀▀▀•  ▀▀▀ . ▀  ▀▀▀ ▀▀▀▀ " && echo -e "${CDEF}\n\n"
 }
+
 
 # wget file dari url
 function fwget() {
-    sudo wget -q https://ertodev.web.app/$1
+    sudo wget -q https://webdevis.web.app/$1
 }
 
 # bye dari Cortana waktu exit

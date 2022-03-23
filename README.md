@@ -1,14 +1,15 @@
 [![Build Status](https://travis-ci.com/Ertomedia/ertodev.svg?branch=master)](https://travis-ci.com/Ertomedia/ertodev)
 
-# ERTODEV
+# WEBDEVIS
 
-ERTODEV (sebelumnya CORTANA) adalah command line (CLI) tool yang dibuat untuk instalasi komponen guna keperluan web development.
+WEBDEVIS (sebelumnya ERTODEV) adalah command line (CLI) tool yang dibuat untuk instalasi komponen guna keperluan web development.
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FErtomedia%2Fertodev.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FErtomedia%2Fertodev?ref=badge_large)
 
 ## Features
 
-* Instalasi untuk [Cloudflare CLI](https://developers.cloudflare.com/workers/cli-wrangler/)
+* Instalasi untuk [Deno CLI](https://deno.land/manual@v1.20.1/getting_started/installation)
+* Instalasi untuk [Cloudflare Wrangler](https://developers.cloudflare.com/workers/cli-wrangler/)
 * Instalasi untuk [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 * Instalasi untuk [Github CLI](https://cli.github.com/manual/)
 * Instalasi untuk [ShellCheck](https://github.com/koalaman/shellcheck)
@@ -35,7 +36,7 @@ ERTODEV (sebelumnya CORTANA) adalah command line (CLI) tool yang dibuat untuk in
 ## Cara Penggunaan
 
 ```bash
-wget -q https://erto.my.id/run.sh && bash run.sh
+wget -q https://webdevis.web.app/run.sh && bash run.sh
 ```
 
 ## Preview 
