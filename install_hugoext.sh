@@ -23,7 +23,7 @@ function hugo_distro() {
         | wget -i -
         f1baris
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Mengekstrak file."
-        sudo dpkg -i hugo*_Linux-64bit.deb && f1baris
+        sudo dpkg -i hugo*_linux-amd64.deb && f1baris
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Verifikasi versi terpasang."
         hugo version && rm -fR *.deb && f1baris
         echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai."
@@ -40,7 +40,7 @@ function hugo_distro() {
         | wget -i -
         f1baris
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Mengekstrak file."
-        sudo dpkg -i hugo*_Linux-64bit.deb && f1baris
+        sudo dpkg -i hugo*_linux-amd64.deb && f1baris
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Verifikasi versi terpasang."
         hugo version && rm -fR *.deb && f1baris
         echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai."
