@@ -59,10 +59,10 @@ function node_distro() {
 function nodecheck() {
     ## Check Node.js if exist
     if [ -f /usr/bin/node ]; then
-        echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Node.js sudah terpasang. Berikut adalah versi yang ada."
+        echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Node.js sudah terpasang, berikut ini versinya."
         node --version && f2baris;
         frmall; # remove all downloaded files
-        exit;;
+        exit
     fi
 }
 

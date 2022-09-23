@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 # install_hugoext.sh
-# ver 0.1.4
-# Modified: 17-03-2022
+# ver 0.2.1
+# Modified: 23-09-2022
 
 . common.lib
 
@@ -17,7 +17,24 @@ function hugo_distro() {
         echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Mengunduh versi terbaru."
         curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
         | grep  browser_download_url \
-        | grep Linux-64bit.deb \
+        | grep linux-amd64.deb \
+        | grep extended \
+        | cut -d '"' -f 4 \
+        | wget -i -
+        f1baris
+        echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Mengekstrak file."
+        sudo dpkg -i hugo*_Linux-64bit.deb && f1baris
+        echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Verifikasi versi terpasang."
+        hugo version && rm -fR *.deb && f1baris
+        echo -e "${LGREN}✔  ${TOPIK}:${CDEF} Selesai."
+        frmall # remove all downloaded files
+
+    if test "$CATOS" = 'debian'
+    then
+        echo -e "${LCYAN}i  ${TOPIK}:${CDEF} Mengunduh versi terbaru."
+        curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
+        | grep  browser_download_url \
+        | grep linux-amd64.deb \
         | grep extended \
         | cut -d '"' -f 4 \
         | wget -i -
